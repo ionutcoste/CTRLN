@@ -11,7 +11,7 @@ public class FalconHeavy extends Battleship implements Starship,Rocket{
         this.destination = destination;
     }
 
-    @Override
+    @Override  //adnotare - marcare a faptului ca metoda este suprascrisa
     public String toString() {
         return "FaconHeavy{" +
                 "destination='" + destination + '\'' +
@@ -42,4 +42,41 @@ public class FalconHeavy extends Battleship implements Starship,Rocket{
             System.out.println(i + "...");
         }
     }
+
+    @Override  //aceasta metoda este mostenita din clasa parinte Battleship si este suprascrisa
+    public void escapeProcedure(int escapePods) {
+        super.escapeProcedure(escapePods);
+        System.out.println("We are in FalconHeavy now!");
+        System.out.println("Escape procedure initiated in FalconHeavy class with " + escapePods + " escape pods");
+    }
+
+    public String escapeProcedure(boolean activated){
+        return activated ? "Escape procedure initiated" : "Escape procedure abord";
+    }
+
+    public void escapeProcedure (int escapePods, boolean activated) {
+        System.out.println(escapeProcedure(activated));
+        if (activated) {
+            escapeProcedure(escapePods);
+        }
+    }
+
+
+     //varargs - variable arguments - transmite un nr variabil de parametri catre metoda noastra
+    public void escapeProcedure(boolean ... activated){
+            for(boolean active : activated){
+                System.out.println("Activation sequence" + active);
+            }
+    }
+
+    public void escapeProcedure(){
+        System.out.println("Waiting for the escape procedure");
+    }
+
+
+
+
+
+
+
 }
