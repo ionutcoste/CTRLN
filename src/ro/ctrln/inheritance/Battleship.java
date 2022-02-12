@@ -4,7 +4,7 @@ import java.util.Objects;
 //POJO Plain Old Java Object
 public class Battleship {
 
-    private String battleshipName;
+    protected String battleshipName;
     private int battleshipCapacity;
 
     public String getBattleshipName(){
@@ -12,6 +12,8 @@ public class Battleship {
     }
 
     public void setBattleshipName(String name){
+        if (name.contains("bad"))
+            return;
         this.battleshipName=name;
     }
 

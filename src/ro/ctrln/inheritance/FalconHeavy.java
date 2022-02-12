@@ -46,7 +46,7 @@ public class FalconHeavy extends Battleship implements Starship,Rocket{
     @Override  //aceasta metoda este mostenita din clasa parinte Battleship si este suprascrisa
     public void escapeProcedure(int escapePods) {
         super.escapeProcedure(escapePods);
-        System.out.println("We are in FalconHeavy now!");
+        System.out.println("We are in FalconHeavy now!" + this.battleshipName);
         System.out.println("Escape procedure initiated in FalconHeavy class with " + escapePods + " escape pods");
     }
 
