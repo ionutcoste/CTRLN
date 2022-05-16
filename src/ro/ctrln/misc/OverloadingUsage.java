@@ -1,6 +1,7 @@
 package ro.ctrln.misc;
 
 import ro.ctrln.inheritance.FalconHeavy;
+import ro.ctrln.util.ProjectUtils;
 
 public class OverloadingUsage {
 
@@ -8,13 +9,13 @@ public class OverloadingUsage {
         FalconHeavy falconHeavy = new FalconHeavy();
 
         falconHeavy.escapeProcedure(10);
-        System.out.println("****************************");
+        ProjectUtils.printMessage("****************************");
         falconHeavy.escapeProcedure(3,true);
-        System.out.println("_______________________________________");
+        ProjectUtils.printMessage("_______________________________________");
         falconHeavy.escapeProcedure();
-        System.out.println("############################################");
+        ProjectUtils.printMessage("############################################");
         falconHeavy.escapeProcedure(false, false, true);
-        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-        System.out.println(falconHeavy.escapeProcedure(false));
+        ProjectUtils.printMessage("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        ProjectUtils.printMessage(falconHeavy.escapeProcedure(false));
     }
 }

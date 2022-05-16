@@ -6,8 +6,8 @@ import java.util.Random;
 public interface Starship {
 
     int FIRST_INT = 1;
-    static int SECOND_INT = 2;
-     public static final int THIRD_INT =1;  //redundant public static final
+    int SECOND_INT = 2;
+    final int THIRD_INT =1;  //redundant public static final
 
     //acestea sunt tot metode abstarcte = trebuie definite in clasa copil
     void warp();  //implicit public

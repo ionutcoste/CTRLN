@@ -1,6 +1,7 @@
 package ro.ctrln.polymorphism;
 
 import ro.ctrln.inheritance.*;
+import ro.ctrln.util.ProjectUtils;
 
 public class StarPortUsage {
 
@@ -16,7 +17,7 @@ public class StarPortUsage {
         falconHeavy.setDestination("home");
         starPort.setStarship(falconHeavy);
         starPort.flyToSpace();
-        System.out.println(starPort);
+        ProjectUtils.printMessage(starPort);
 
         starPort.setStarship(xWingStarFighter);
         starPort.flyToSpace();

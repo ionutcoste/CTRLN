@@ -1,5 +1,7 @@
 package ro.ctrln.inheritance;
 
+import ro.ctrln.util.ProjectUtils;
+
 public class FalconHeavy extends Battleship implements Starship,Rocket{
 
     private String destination;
@@ -22,7 +24,7 @@ public class FalconHeavy extends Battleship implements Starship,Rocket{
 
     @Override
     public void warp() {
-        System.out.println("FalconHeavy doesn't warp. It goes to the moon!");
+        ProjectUtils.printMessage("FalconHeavy doesn't warp. It goes to the moon!");
     }
 
     @Override
@@ -39,15 +41,15 @@ public class FalconHeavy extends Battleship implements Starship,Rocket{
     @Override
     public void launchCountdown(int nr) {
         for (int i=nr;i>=1;i--){
-            System.out.println(i + "...");
+            ProjectUtils.printMessage(i + "...");
         }
     }
 
     @Override  //aceasta metoda este mostenita din clasa parinte Battleship si este suprascrisa
     public void escapeProcedure(int escapePods) {
         super.escapeProcedure(escapePods);
-        System.out.println("We are in FalconHeavy now!" + this.battleshipName);
-        System.out.println("Escape procedure initiated in FalconHeavy class with " + escapePods + " escape pods");
+        ProjectUtils.printMessage("We are in FalconHeavy now!" + this.battleshipName);
+        ProjectUtils.printMessage("Escape procedure initiated in FalconHeavy class with " + escapePods + " escape pods");
     }
 
     public String escapeProcedure(boolean activated){
@@ -55,7 +57,7 @@ public class FalconHeavy extends Battleship implements Starship,Rocket{
     }
 
     public void escapeProcedure (int escapePods, boolean activated) {
-        System.out.println(escapeProcedure(activated));
+        ProjectUtils.printMessage(escapeProcedure(activated));
         if (activated) {
             escapeProcedure(escapePods);
         }
@@ -65,12 +67,12 @@ public class FalconHeavy extends Battleship implements Starship,Rocket{
      //varargs - variable arguments - transmite un nr variabil de parametri catre metoda noastra
     public void escapeProcedure(boolean ... activated){
             for(boolean active : activated){
-                System.out.println("Activation sequence" + active);
+                ProjectUtils.printMessage("Activation sequence" + active);
             }
     }
 
     public void escapeProcedure(){
-        System.out.println("Waiting for the escape procedure");
+        ProjectUtils.printMessage("Waiting for the escape procedure");
     }
 
 
